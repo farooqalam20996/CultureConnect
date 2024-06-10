@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+.app-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.section {
+  padding: 100px 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section:nth-of-type(even) {
+  background-color: #f5f5f5;
+}
+
+.root {
+  flex-grow: 1;
+}
+
+.menuButton {
+  margin-right: '20px';
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.section {  
+  padding: '80px 0';
+  text-align: 'center';
+}

@@ -1,0 +1,86 @@
+.section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.activityPaper {
+  padding: 10px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.activityPaper h6 {
+  margin-bottom: 5px;
+}
+
+.activityPaper .MuiTypography-body2 {
+  font-size: 0.875rem; /* Small font size for activity title */
+}
+
+.activityPaper .MuiTypography-caption {
+  font-size: 0.75rem; /* Even smaller font size for description */
+}
+
+.calendarNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.gridHeader {
+  background-color: #f5f5f5;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridContainer {
+  margin-top: 10px;
+}
+
+.gridItem {
+  padding: 5px;
+}
+
+.gridItem .MuiPaper-root {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  Subscription CSS  */
+
+.sectionSub {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.processPaper {
+  text-align: center;
+  /* padding: 20px; */
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.processImage {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.buttonsContainer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.buttonsContainer button {
+  margin: 0 10px;
+}
