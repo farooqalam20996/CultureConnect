@@ -1,6 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Container, Button, makeStyles, ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-// import { makeStyles } from '@mui/styles';
+import { AppBar, Toolbar, Typography, Container, Button } from '@mui/material';
 import './App.css';
 import About from './Pages/About';
 import Culture from './Pages/Culture';
@@ -23,7 +22,7 @@ function App(props) {
       <AppBar position="fixed">
         <Toolbar style={{ display:"flex", alignItems:"center", justifyContent:"space-between" }} >
           <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between" }} >
-            <img src={logo} style={{ width:"2.5rem", height:'2.5rem', borderRadius:"100%"  }} />
+            <img alt="logo" src={logo} style={{ width:"2.5rem", height:'2.5rem', borderRadius:"100%"  }} />
             <Typography variant="h6" className={"title"} style={{ marginLeft:"4px" }} >
               Culture Connect
             </Typography>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Button } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Container, Typography, Button } from '@mui/material';
 import './index.css';
 import RevenueImage from "../../Image/revenue2.jpg";
 import money from "../../Image/money.jpg";
@@ -12,8 +11,8 @@ const RevenueStream = () => {
                 <Typography variant="h3" gutterBottom>
                     Revenue Stream
                 </Typography>
-                <img src={RevenueImage} className='imageStyle' />
-                <img src={money} className='imageStyle' />
+                <img alt={"RevenueImage"} src={RevenueImage} className='imageStyle' />
+                <img alt={"money"} src={money} className='imageStyle' />
             </Container>
             <Typography variant='h5' style={{ fontFamily: "bold", marginTop: "3rem", marginBottom: "3rem" }}  >
                 Customers will pay a nominal subscription fee to access the platform's exclusive offerings.

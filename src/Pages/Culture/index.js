@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Typography, Tabs, Tab, Grid, Paper } from '@mui/material';
+import { Container, Typography, Tabs, Tab, Grid } from '@mui/material';
 import './index.css';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import ShieldIcon from '@mui/icons-material/Shield';
@@ -22,7 +22,7 @@ const CultureConnect = () => {
     const interval = setInterval(() => {
       setValue(prevValue => (prevValue + 1) % 4);
     }, 4000);
-
+    
     return () => clearInterval(interval); 
   }, []);
 
