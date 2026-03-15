@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography, Container } from '@mui/material';
 import './index.css';
 
-import Shriya from "../../Image/shriya.png"
+import Shriya from "../../Image/Farooq.png"
 
 const About = () => {
   return (

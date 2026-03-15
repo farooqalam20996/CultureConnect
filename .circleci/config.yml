@@ -1,12 +1,14 @@
 version: 2.1
 
 jobs:
-  docker-build:
+  build-test-docker:
     docker:
       - image: cimg/node:20.5
+
     steps:
       - checkout
 
+      # Enable Docker
       - setup_remote_docker
 
       # Restore Yarn cache
@@ -19,7 +21,7 @@ jobs:
           name: Install Dependencies
           command: yarn install --ignore-engines
 
-      # Save Yarn cache
+      # Save cache
       - save_cache:
           paths:
             - node_modules
@@ -31,17 +33,32 @@ jobs:
           name: Run Tests
           command: CI=true yarn test
 
-      # Build React app
+      # Build React App
       - run:
-          name: Build App
+          name: Build React App
           command: yarn build
 
-      # Build Docker image
+      # Build Docker Image
       - run:
-          name: Build Docker image
+          name: Build Docker Image
           command: docker build -t culture-connect .
 
+      # Login to Docker Hub
+      - run:
+          name: Login to Docker Hub
+          command: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+
+      # Tag Docker Image
+      - run:
+          name: Tag Docker Image
+          command: docker tag culture-connect $DOCKER_USERNAME/culture-connect:latest
+
+      # Push Docker Image
+      - run:
+          name: Push Docker Image
+          command: docker push $DOCKER_USERNAME/culture-connect:latest
+
 workflows:
-  build-and-test:
+  build-test-and-deploy:
     jobs:
-      - docker-build
+      - build-test-docker
