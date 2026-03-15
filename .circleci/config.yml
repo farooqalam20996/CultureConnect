@@ -27,7 +27,7 @@ jobs:
       # Run tests (CI-friendly)
       - run:
           name: Run Tests
-          command: yarn test --watchAll=false
+          command: CI=true yarn test
 
       # Build the app
       - run:
