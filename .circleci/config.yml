@@ -10,7 +10,7 @@ jobs:
 
       - run:
           name: Install Dependencies
-          command: npm install
+          command: npm install --legacy-peer-deps
 
       - run:
           name: Run Tests
