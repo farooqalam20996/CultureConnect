@@ -3,24 +3,38 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:18.0
-
+      - image: cimg/node:20.5  # Node 20 LTS, latest CircleCI image
     steps:
       - checkout
 
+      # Restore Yarn cache
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+
+      # Install dependencies
       - run:
           name: Install Dependencies
-          command: npm install
+          command: yarn install --ignore-engines
 
+      # Save Yarn cache
+      - save_cache:
+          paths:
+            - node_modules
+            - ~/.cache/yarn
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+
+      # Run tests
       - run:
           name: Run Tests
-          command: npm test
+          command: yarn test
 
+      # Optional: Build the app
       - run:
-          name: Build Project
-          command: npm run build
+          name: Build App
+          command: yarn build
 
 workflows:
-  build_and_test:
+  build-and-test:
     jobs:
       - build
