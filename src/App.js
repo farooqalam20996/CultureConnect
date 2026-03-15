@@ -24,7 +24,7 @@ function App(props) {
           <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between" }} >
             <img alt="logo" src={logo} style={{ width:"2.5rem", height:'2.5rem', borderRadius:"100%"  }} />
             <Typography variant="h6" className={"title"} style={{ marginLeft:"4px" }} >
-              Culture Connect
+              Culture Connect - Farooq
             </Typography>
           </div>
           <div>
