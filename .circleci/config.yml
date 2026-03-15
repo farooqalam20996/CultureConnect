@@ -6,11 +6,8 @@ jobs:
       - image: cimg/node:20.5
     steps:
       - checkout
-      - setup_remote_docker
-      - run:
-          name: Build Docker image
-          command: docker build -t culture-connect .
 
+      - setup_remote_docker
 
       # Restore Yarn cache
       - restore_cache:
@@ -29,20 +26,22 @@ jobs:
             - ~/.cache/yarn
           key: yarn-cache-{{ checksum "yarn.lock" }}
 
-      # Run tests (CI-friendly)
+      # Run tests
       - run:
           name: Run Tests
           command: CI=true yarn test
 
-      # Build the app
+      # Build React app
       - run:
           name: Build App
           command: yarn build
 
+      # Build Docker image
+      - run:
+          name: Build Docker image
+          command: docker build -t culture-connect .
+
 workflows:
   build-and-test:
     jobs:
-      - build
-      - docker-build:
-          requires:
-            - build
+      - docker-build
