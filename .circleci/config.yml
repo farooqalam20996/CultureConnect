@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:20.5  # Node 20 LTS, latest CircleCI image
+      - image: cimg/node:20.5
     steps:
       - checkout
 
@@ -24,12 +24,12 @@ jobs:
             - ~/.cache/yarn
           key: yarn-cache-{{ checksum "yarn.lock" }}
 
-      # Run tests
+      # Run tests (CI-friendly)
       - run:
           name: Run Tests
-          command: yarn test
+          command: yarn test --watchAll=false
 
-      # Optional: Build the app
+      # Build the app
       - run:
           name: Build App
           command: yarn build
